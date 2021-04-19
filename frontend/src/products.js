@@ -2,7 +2,7 @@ const products = [
     {
         '_id': 1,
         'name': 'Operating System Concepts',
-        'image': '/images/51Qy2upM+aL._SX327_BO1,204,203,200_.png',
+        'image': '/images/newbook4.png',
         'author': 'Abraham silberschatz',
         'price': 499,
         'countInStock': 20,
