@@ -102,7 +102,7 @@ function RegisterScreen( { location, history } ) {
 
             <Row className='py-3'>
                 <Col>
-                    Have an Account? <Link 
+                    Already a Member? <Link 
                         to={redirect ? `/login?redirect=${redirect}` : '/login'}>
                         SIGN IN
                         </Link>
