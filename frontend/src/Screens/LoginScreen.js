@@ -8,7 +8,7 @@ import FormContainer from '../Components/FormContainer'
 import { login } from '../actions/userActions'
 
 
-function LoginScreen({location, history}) {
+function LoginScreen({ location, history }) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
@@ -67,9 +67,19 @@ function LoginScreen({location, history}) {
 
                 <Row className='py-3'>
                     <Col>
-                        Become a member and avail 20% OFF on purchases <Link 
+                        New Customer? <Link 
                            to={redirect ? `/register?redirect=${redirect}` : '/register'}>
-                            ...subscribe
+                            Register
+                            </Link>
+                    </Col>
+
+                </Row>
+
+                <Row className='py-3'>
+                    <Col>
+                        Not yet Subscribed? <Link 
+                           to={redirect ? `/subscribe?redirect=${redirect}` : '/Subscribe'}>
+                            subscribe
                             </Link>
                     </Col>
 

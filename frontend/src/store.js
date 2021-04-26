@@ -4,6 +4,7 @@ import { productListReducer, productDetailsReducer } from './reducers/productRed
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { cartReducer } from './reducers/cartReducers'
 import { userLoginReducer, userRegisterReducer, userDetailsReducer, userUpdateProfileReducer } from './reducers/userReducers'
+import { subscriberLoginReducer } from './reducers/subscriberReducers'
 
 const reducer = combineReducers({
     productList : productListReducer, 
@@ -13,6 +14,7 @@ const reducer = combineReducers({
     userRegister: userRegisterReducer,
     userDetails: userDetailsReducer,
     userUpdateProfile: userUpdateProfileReducer,
+    subscriberLogin: subscriberLoginReducer,
 })
 
 
@@ -22,9 +24,14 @@ const cartItemsFromStorage = localStorage.getItem('cartItems') ?
 const userInfoFromStorage = localStorage.getItem('userInfo') ?
         JSON.parse(localStorage.getItem('userInfo')) : null
 
+const subscriberInfoFromStorage = localStorage.getItem('subscriberInfo') ?
+        JSON.parse(localStorage.getItem('subscriberInfo')) : null        
+
 const initialState = {
     cart: { cartItems: cartItemsFromStorage },
-    userLogin: { userInfo: userInfoFromStorage }
+    userLogin: { userInfo: userInfoFromStorage },
+    subscriberLogin: { subscriberInfo: subscriberInfoFromStorage }
+
 }
 
 const middleware = [thunk]
