@@ -48,3 +48,6 @@ export const slogout = () => (dispatch) => {
     localStorage.removeItem('subscriberInfo')
     dispatch({type:SUBSCRIBER_LOGOUT})
 }
+
+
+

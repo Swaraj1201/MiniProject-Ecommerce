@@ -9,6 +9,9 @@ import LoginScreen from './Screens/LoginScreen'
 import RegisterScreen from './Screens/RegisterScreen'
 import ProfileScreen from './Screens/ProfileScreen'
 import SubscriberScreen from './Screens/SubscriberScreen'
+import ShippingScreen from './Screens/ShippingScreen'
+import PaymentScreen from './Screens/PaymentScreen'
+import PlaceOrderScreen from './Screens/PlaceOrderScreen'
 
 
 
@@ -23,6 +26,9 @@ function App() {
           <Route path='/Subscribe' component={SubscriberScreen} />
           <Route path='/register' component={RegisterScreen} />
           <Route path='/profile' component={ProfileScreen} />
+          <Route path='/shipping' component={ShippingScreen} />
+          <Route path='/placeorder' component={PlaceOrderScreen} />
+          <Route path='/payment' component={PaymentScreen} />
           <Route path='/product/:id' component={ProductScreen}  />
           <Route path='/cart/:id?' component={CartScreen}  />
         </Container>
