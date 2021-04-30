@@ -3,6 +3,8 @@ import { useDispatch, useSelector} from 'react-redux'
 import { Navbar, Nav, Row, Container, NavDropdown } from "react-bootstrap"
 import { LinkContainer } from "react-router-bootstrap"
 import { logout } from '../actions/userActions'
+import { slogout } from '../actions/subscriberActions'
+
 
 
 function Header() {
@@ -10,10 +12,18 @@ function Header() {
   const userLogin = useSelector(state => state.userLogin)
   const { userInfo } = userLogin
 
+  const subscriberLogin = useSelector(state => state.subscriberLogin)
+  const { subscriberInfo } = subscriberLogin
+
+
   const dispatch = useDispatch()
 
   const logoutHandler = () => {
     dispatch(logout())
+  }
+
+  const slogoutHandler = () => {
+    dispatch(slogout())
   }
 
   return (
@@ -47,9 +57,28 @@ function Header() {
                     <i className="fas fa-user"></i>Login
                   </Nav.Link>
                 </LinkContainer>
+
+                
               )}
 
-              
+                {subscriberInfo ? (
+                <NavDropdown title={subscriberInfo.name} id='username'>
+                    <LinkContainer to='/profile'>
+                        <NavDropdown.Item>Profile</NavDropdown.Item>
+                    </LinkContainer>
+
+                    <NavDropdown.Item onClick={slogoutHandler}>Logout</NavDropdown.Item>   
+
+                </NavDropdown>
+              ): (
+                <LinkContainer to="/Subscribe">
+                  <Nav.Link >
+                    <i className="fas fa-bookmark"></i>Subscribe
+                  </Nav.Link>
+                </LinkContainer>
+              )}
+
+
             </Nav>
           </Navbar.Collapse>
         </Container>

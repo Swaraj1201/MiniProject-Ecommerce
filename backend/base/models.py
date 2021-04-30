@@ -71,3 +71,12 @@ class ShippingAddress(models.Model):
 
     def __str__(self):
         return str(self.address)
+
+class Subscriber(models.Model):
+    Subscribername = models.CharField( max_length= 100 )
+    password =  models.CharField(max_length= 50)
+    _id = models.AutoField(primary_key = True, editable = False)
+
+    def __str__(self):
+        return str(self.name)
+
