@@ -1,6 +1,5 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from django.contrib.auth.models import Subscriber
 from rest_framework_simplejwt.tokens import RefreshToken
 from .models import Product
 
@@ -44,10 +43,6 @@ class ProductSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class SubscriberSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Subscriber
-        fields = '__all__'
 
 
 

@@ -35,6 +35,7 @@ function SubscriberScreen({ location, history }) {
 
     return (     
         <FormContainer>
+            <marquee>SUBSCRIBE TO BECOME A PRIVILEDGED CUSTOMER AND AVAIL 20% OFF on PURCHASES AND A ONE DAY DELIVERY</marquee>
             <h1>Subscribe</h1>
             {error && <Message variant='danger'>{error}</Message>}
             {loading && <Loader/>}
