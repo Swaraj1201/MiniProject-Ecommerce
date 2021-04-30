@@ -73,10 +73,8 @@ class ShippingAddress(models.Model):
         return str(self.address)
 
 class Subscriber(models.Model):
-    Name = models.OneToOneField(Order, on_delete = models.CASCADE, null= True, blank = True )
-    Email = models.CharField(max_length= 200, null= True, blank = True)
-    password =  models.CharField(max_length= 200, null= True, blank = True)
-    country = models.CharField(max_length= 200, null= True, blank = True)
+    Subscribername = models.CharField( max_length= 100 )
+    password =  models.CharField(max_length= 50)
     _id = models.AutoField(primary_key = True, editable = False)
 
     def __str__(self):

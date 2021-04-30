@@ -39,6 +39,7 @@ function SubscriberScreen({ location, history }) {
             {error && <Message variant='danger'>{error}</Message>}
             {loading && <Loader/>}
             <Form onSubmit={submitHandler}>
+
                 <Form.Group controlId='subemail'>
                     <Form.Label>Email Address</Form.Label>
                     <Form.Control
@@ -66,6 +67,16 @@ function SubscriberScreen({ location, history }) {
                     Sign In
                 </Button>
             </Form>
+
+            <Row className='py-3'>
+                <Col>
+                    Not subscribed? <Link
+                        to={redirect ? `/sregister?redirect=${redirect}` : '/sregister'}>
+                        subscribe
+                        </Link>
+                </Col>
+            </Row>
+
 
            
         </FormContainer>

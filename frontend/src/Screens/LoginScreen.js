@@ -77,9 +77,9 @@ function LoginScreen({ location, history }) {
 
                 <Row className='py-3'>
                     <Col>
-                        Not yet Subscribed? <Link 
+                        Subscriber? <Link 
                            to={redirect ? `/subscribe?redirect=${redirect}` : '/Subscribe'}>
-                            subscribe
+                            Login
                             </Link>
                     </Col>
 
